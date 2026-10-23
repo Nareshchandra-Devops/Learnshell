@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 START_TIME=$(date +%s)
 echo "Script started excution at: $START_TIME"
