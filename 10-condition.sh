@@ -3,7 +3,7 @@
 echo "Please enter the marks"
 read marks
 
-if [ $marks -lt 33]; then
+if [ $marks -lt 33 ]; then
 echo "Fail"
 elif [ $marks -lt 50 ]; then
 echo "Third class"
