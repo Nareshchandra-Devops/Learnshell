@@ -8,9 +8,9 @@ echo "$var1+$var2"
 echo "$((var1+var2+var3))"
 
 declare -i count=5
-COUNT=COUNT+1
+count=count+1
 
-echo "count is: $COUNT"
+echo "count is: $count"
 
 FRUITS=("Apple" "Banana" "Pappaya")
 echo "All fruits: ${FRUITS[@]}"
