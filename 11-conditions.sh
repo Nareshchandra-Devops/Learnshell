@@ -15,4 +15,14 @@ if [ $? -ne 0 ]; then
     exit 1
 else    
     echo "Nginx installation is success"
-    
+
+fi  
+
+dnf install mysql -y
+
+if [ $? -ne 0 ]; then
+    echo "mysql client installation is success"
+
+fi  
+
+echo "Still Proceeded..."
