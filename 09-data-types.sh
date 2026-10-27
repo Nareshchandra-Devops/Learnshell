@@ -2,7 +2,7 @@
 
 var1=10
 var2=20
-var3=30
+var3=naresh
 
 echo "$var1+$var2"
 echo "$(($var1+$var2+$var3))"
@@ -14,4 +14,3 @@ echo "count is: $COUNT"
 
 FRUITS=("Apple" "Banana" "Pappaya")
 echo "All fruits: ${FRUITS[@]}
-
