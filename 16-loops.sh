@@ -13,18 +13,6 @@ mkdir -p $logs_folder
 
 echo "Script started excution at $ (date +"%F %T"); &?? $logs_file
 
-for package in $@
-do 
-    dnf list  installed $package &>> $logs_file
-    if [ $? -ne 0 ]; then
-        echo "Goingg Install: ${package}
-        dnf install $package -y &>> $logs_file
-        validate $? "Installing ${package}"
-    else
-        echo "${package} already installed...SKIPPING"
-    fi
-done
-
 validate(){
     if [ $1 -ne 0 ]; then
         echo "${2}..failed" | tee -a $logs_file
@@ -33,3 +21,15 @@ validate(){
         echo "${2}..success" | tee -a $logs_file
     fi
 }
+
+for package in $@
+do 
+    dnf list  installed $package &>> $logs_file
+    if [ $? -ne 0 ]; then
+        echo "Going Install: ${package}
+        dnf install $package -y &>> $logs_file
+        validate $? "Installing ${package}"
+    else
+        echo "${package} already installed...SKIPPING"
+    fi
+done
