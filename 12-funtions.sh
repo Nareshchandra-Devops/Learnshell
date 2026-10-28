@@ -5,6 +5,7 @@ user_id=$(id -u)
 if [ $user_id -ne 0 ]; theen
     echo "please run this script with sudo access.."
     exit 1
+    fi  
 
 validate (){
     if [ $1 -ne 0 ]; then
