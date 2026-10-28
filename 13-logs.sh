@@ -10,7 +10,7 @@ if [ $user_id -ne 0 ]; then
 fi
 mkdir -p $logs_folder   
 
-echo "script  startted execution at $(date +"%F %T")" &>> $logs_file
+echo "script  started execution at $(date +"%F %T")" &>> $logs_file
 
 validate(){
        if [ $1 -ne 0  ]; then
@@ -22,10 +22,10 @@ validate(){
 
 }
 
-dnf insttall ngnix -y &>> $logs_file
+dnf install ngnix -y &>> $logs_file
 validate $? "nignix installation"
 
-dnf install mysql -y &?? $logs_file
+dnf install mysql -y &>> $logs_file
 validate $? "mysql installation"
 
 echo "script excution completed at $(date +"%F %T")" &>> $logs_file
