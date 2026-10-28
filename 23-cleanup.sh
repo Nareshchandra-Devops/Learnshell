@@ -12,7 +12,7 @@ Usage(){
     exit 1
 }
 
-if [-z "source_dir" ]; then
+if [ -z "source_dir" ]; then
     echo "ERROR:: Missing parameters"
     Usage
 fi
