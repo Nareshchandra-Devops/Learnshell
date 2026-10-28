@@ -23,7 +23,7 @@ validate(){
 }
 
 dnf install ngnix -y &>> $logs_file
-validate $? "nignix installation"
+validate $? "ngnix installation"
 
 dnf install mysql -y &>> $logs_file
 validate $? "mysql installation"
