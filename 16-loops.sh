@@ -24,10 +24,10 @@ validate(){
 
 for package in $@
 do 
-    dnf list  installed $package &>> $logs_file
+    dnf list  installed "$package" &>> "$logs_file"
     if [ $? -ne 0 ]; then
-        echo "Going Install: ${package}
-        dnf install $package -y &>> $logs_file
+        echo "Going Install: ${package}"
+        dnf install "$package" -y &>> $logs_file
         validate $? "Installing ${package}"
     else
         echo "${package} already installed...SKIPPING"
