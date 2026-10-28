@@ -4,14 +4,14 @@ user_id=$(id -u)
 log_folder="/var/log/shell-practice"
 logs_file="${logss_folder}/${0}.log"
 
-if [$user_id -ne 0 ]; then
+if [ $user_id -ne 0 ]; then
     echo "Please run this script with sudo access..."
     exit 1
 fi
 
 mkdir -p $log_folder
 
-echo " Script started execution at $(date +"%F %T")" &>> $logs_file
+echo "Script started execution at $(date +"%F %T")" &>> $logs_file
 
 validate(){
     if [ $1 -ne 0 ]; then
