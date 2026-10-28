@@ -9,7 +9,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[34m"
 
-trap 'echo "Error at $LINENO", command: "$BASH_COMMAND" ERR
+trap 'echo "Error at  line $LINENO", command: "$BASH_COMMAND" ' ERR
 
 if [ $user_id -ne 0 ]; then
     echo "Please run this script with sudo access.."
@@ -27,7 +27,7 @@ do
         echo "Going to install: ${package}"
         dnf install $package -y &>> logs_file
     else
-        echo -e "${package} already installed...${Y}SKIPPING${N}
+        echo -e "${package} already installed...${Y}SKIPPING${N}"
     fi
 done
 
